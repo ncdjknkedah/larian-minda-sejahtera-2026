@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="ms">
+<html lang="ms" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Larian Minda Sejahtera 2026</title>
+    <title>Larian Minda Sejahtera 2026 | Kedah</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Font Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
@@ -17,419 +17,567 @@
                 extend: {
                     colors: {
                         brand: {
-                            purple: '#4c2882',
-                            green: '#3db54a',
-                            lightgreen: '#8cc63f',
-                            darkpurple: '#2f1854'
+                            green: '#2e7d32',
+                            'green-light': '#4caf50',
+                            purple: '#6a1b9a',
+                            'purple-dark': '#4a148c',
+                            'purple-light': '#9c27b0',
+                            accent: '#81c784'
                         }
                     },
                     fontFamily: {
-                        sans: ['Poppins', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
     <style>
-        .gradient-bg {
-            background: linear-gradient(135deg, #4c2882 0%, #2f1854 50%, #3db54a 100%);
+        /* Hero background with dark overlay & subtle poster image */
+        .hero-banner-bg {
+            background-image: 
+                linear-gradient(135deg, rgba(42, 11, 80, 0.92) 0%, rgba(20, 68, 25, 0.88) 100%),
+                url('banner larian.jpg');
+            background-size: cover;
+            background-position: center top;
+            background-repeat: no-repeat;
         }
-        .hero-overlay {
-            background: rgba(15, 23, 42, 0.75);
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.22);
         }
-        .countdown-box {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
+
+        .glass-counter-box {
+            background: rgba(10, 15, 29, 0.45);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+<body class="bg-gray-50 text-gray-800 font-sans antialiased selection:bg-brand-green selection:text-white">
 
-    <!-- Header / Navbar -->
-    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-slate-100">
-        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <span class="text-2xl font-extrabold tracking-tight text-brand-purple">
-                    <i class="fa-solid font-bold text-brand-green fa-person-running mr-1"></i> LARIAN MINDA <span class="text-brand-green">2026</span>
-                </span>
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-gray-100 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-brand-purple to-brand-green flex items-center justify-center text-white font-extrabold text-xl shadow-md">
+                        💚
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-xl tracking-tight text-brand-purple-dark block leading-none">LARIAN MINDA</span>
+                        <span class="text-xs font-bold tracking-wider text-brand-green uppercase">SEJAHTERA 2026</span>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8 font-medium text-gray-600">
+                    <a href="#about" class="hover:text-brand-green transition">Mengenai</a>
+                    <a href="#details" class="hover:text-brand-green transition">Butiran Acara</a>
+                    <a href="#gallery" class="hover:text-brand-green transition">Galeri Poster</a>
+                    <a href="#sizing" class="hover:text-brand-green transition">Carta Saiz</a>
+                    <a href="#register" class="bg-gradient-to-r from-brand-green to-brand-green-light hover:from-green-700 hover:to-brand-green text-white px-5 py-2.5 rounded-full font-semibold shadow-md hover:shadow-lg transition-all flex items-center gap-2 transform hover:scale-[1.02]">
+                        <span>Daftar Sekarang</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <div class="md:hidden">
+                    <a href="#register" class="bg-brand-green text-white px-4 py-2 rounded-full font-semibold text-sm shadow">
+                        Daftar
+                    </a>
+                </div>
             </div>
-            <a href="#daftar" class="bg-brand-green hover:bg-emerald-600 text-white font-bold px-5 py-2 rounded-full transition-all shadow-md hover:shadow-lg text-sm sm:text-base flex items-center gap-2">
-                <span>Daftar Sekarang</span>
-                <i class="fa-solid fa-arrow-right"></i>
-            </a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="relative gradient-bg text-white py-16 md:py-24 px-4 overflow-hidden">
-        <div class="max-w-5xl mx-auto text-center relative z-10">
-            <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold text-emerald-200 mb-6 border border-white/20">
-                <i class="fa-solid fa-ribbon text-brand-green"></i> Sambutan Hari Kesihatan Mental Sedunia 2026
-            </div>
-            <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-4 leading-tight">
-                LARIAN MINDA SEJAHTERA <span class="text-emerald-300">2026</span> 💚
-            </h1>
-            <p class="text-base sm:text-lg md:text-xl text-emerald-100 max-w-3xl mx-auto mb-8 font-light leading-relaxed">
-                Anjuran <span class="font-semibold text-white">Jabatan Kesihatan Negeri Kedah</span> dengan kerjasama <span class="font-semibold text-white">PKD Kubang Pasu</span> & <span class="font-semibold text-white">C-Mart Changloon</span>. Larian santai seisi keluarga bagi meningkatkan kesedaran kesihatan mental.
-            </p>
+    <!-- Hero Section with Poster Ambient Background -->
+    <section class="relative text-white hero-banner-bg py-20 lg:py-28 overflow-hidden">
+        <!-- Floating decorative glows -->
+        <div class="absolute -top-24 -left-24 w-96 h-96 bg-brand-green/30 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-brand-purple-light/25 rounded-full blur-3xl pointer-events-none"></div>
 
-            <!-- Quick Details Grid -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-4xl mx-auto mb-10 text-left">
-                <div class="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/10">
-                    <div class="text-emerald-300 text-sm font-semibold mb-1"><i class="fa-regular fa-calendar mr-1"></i> Tarikh</div>
-                    <div class="text-white font-bold text-sm sm:text-base">24 Okt 2026 (Sabtu)</div>
-                </div>
-                <div class="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/10">
-                    <div class="text-emerald-300 text-sm font-semibold mb-1"><i class="fa-regular fa-clock mr-1"></i> Masa</div>
-                    <div class="text-white font-bold text-sm sm:text-base">7.30 Pagi</div>
-                </div>
-                <div class="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/10">
-                    <div class="text-emerald-300 text-sm font-semibold mb-1"><i class="fa-solid fa-route mr-1"></i> Jarak</div>
-                    <div class="text-white font-bold text-sm sm:text-base">3 KM (Santai)</div>
-                </div>
-                <a href="https://maps.app.goo.gl/jYLoWT2EZcvYge4H8" target="_blank" rel="noopener noreferrer" class="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/10 hover:bg-white/20 transition group">
-                    <div class="text-emerald-300 text-sm font-semibold mb-1 flex items-center justify-between">
-                        <span><i class="fa-solid fa-location-dot mr-1"></i> Lokasi</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-xs group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 backdrop-blur-md text-xs font-bold tracking-wide uppercase text-green-300 border border-white/20 shadow-sm">
+                        <i class="fa-solid fa-ribbon text-green-400"></i> Sambutan Hari Kesihatan Mental Sedunia 2026
                     </div>
-                    <div class="text-white font-bold text-sm sm:text-base underline decoration-emerald-400">C-Mart Changloon</div>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
+                        Larian Minda Sejahtera <span class="text-green-400 drop-shadow-sm">2026</span>
+                    </h1>
+                    
+                    <p class="text-lg sm:text-xl text-gray-100 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+                        Larian santai 3KM seisi keluarga untuk meningkatkan kesedaran kesihatan mental serta membina komuniti yang lebih prihatin dan positif.
+                    </p>
+
+                    <div class="pt-2 flex flex-wrap gap-4 justify-center lg:justify-start">
+                        <a href="#register" class="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-0.5 flex items-center gap-3">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                            <span>Daftar Larian</span>
+                        </a>
+                        <a href="#details" class="bg-white/15 backdrop-blur-md hover:bg-white/25 text-white font-semibold px-6 py-4 rounded-xl border border-white/30 transition flex items-center gap-2">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span>Maklumat Lanjut</span>
+                        </a>
+                    </div>
+
+                    <!-- Hash Tags -->
+                    <div class="pt-4 flex flex-wrap gap-2 justify-center lg:justify-start text-xs font-medium text-green-200/90 tracking-wide">
+                        <span>#LangkahUntukMinda</span> •
+                        <span>#HentikanStigma</span> •
+                        <span>#KesihatanMentalMilikSemua</span>
+                    </div>
+                </div>
+
+                <!-- Event Countdown Box -->
+                <div class="lg:col-span-5">
+                    <div class="glass-card p-6 sm:p-8 rounded-3xl shadow-2xl text-center relative overflow-hidden">
+                        <div class="inline-flex items-center gap-2 mb-2">
+                            <i class="fa-regular fa-clock text-green-400"></i>
+                            <h3 class="text-lg sm:text-xl font-extrabold text-green-300 uppercase tracking-widest">EVENT COUNTDOWN</h3>
+                        </div>
+                        <p class="text-xs text-gray-200 mb-6 font-medium">24 Oktober 2026 • 7.30 Pagi</p>
+
+                        <div id="countdown" class="grid grid-cols-4 gap-3 text-center">
+                            <div class="glass-counter-box p-3 sm:p-4 rounded-2xl">
+                                <span id="days" class="block text-2xl sm:text-4xl font-extrabold text-white font-mono">00</span>
+                                <span class="text-[10px] sm:text-xs text-gray-300 uppercase font-semibold">Hari</span>
+                            </div>
+                            <div class="glass-counter-box p-3 sm:p-4 rounded-2xl">
+                                <span id="hours" class="block text-2xl sm:text-4xl font-extrabold text-white font-mono">00</span>
+                                <span class="text-[10px] sm:text-xs text-gray-300 uppercase font-semibold">Jam</span>
+                            </div>
+                            <div class="glass-counter-box p-3 sm:p-4 rounded-2xl">
+                                <span id="minutes" class="block text-2xl sm:text-4xl font-extrabold text-white font-mono">00</span>
+                                <span class="text-[10px] sm:text-xs text-gray-300 uppercase font-semibold">Minit</span>
+                            </div>
+                            <div class="glass-counter-box p-3 sm:p-4 rounded-2xl">
+                                <span id="seconds" class="block text-2xl sm:text-4xl font-extrabold text-white font-mono">00</span>
+                                <span class="text-[10px] sm:text-xs text-gray-300 uppercase font-semibold">Saat</span>
+                            </div>
+                        </div>
+
+                        <!-- Direct Clickable Google Maps in Countdown -->
+                        <div class="mt-6 pt-6 border-t border-white/15">
+                            <a href="https://maps.app.goo.gl/jYLoWT2EZcvYge4H8" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold text-green-300 hover:text-white bg-black/30 hover:bg-black/50 px-5 py-2.5 rounded-full border border-green-400/40 transition shadow-sm hover:scale-105">
+                                <i class="fa-solid fa-location-dot text-green-400 text-sm"></i>
+                                <span>Lokasi: C-Mart Changloon, Kedah</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px] ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Organizers Tag -->
+    <section class="bg-white border-b py-6 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-4">Anjuran Bersama & Kerjasama Rasmi</p>
+            <div class="flex flex-wrap justify-center items-center gap-6 sm:gap-12 opacity-85 font-bold text-gray-700 text-sm sm:text-base">
+                <div class="flex items-center gap-2">
+                    <span class="text-brand-purple">🏛️</span> Jabatan Kesihatan Negeri (JKN) Kedah
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="text-brand-green">🏥</span> PKD Kubang Pasu
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="text-blue-600">🛒</span> C-Mart Changloon
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Details Section -->
+    <section id="details" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Butiran Utama Acara</h2>
+                <p class="mt-3 text-lg text-gray-600">Sertai larian santai ini dan nikmati pelbagai keistimewaan yang disediakan untuk anda dan keluarga.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Date Card -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 card-hover flex flex-col items-center text-center">
+                    <div class="w-14 h-14 rounded-2xl bg-green-50 text-brand-green flex items-center justify-center text-2xl mb-4 shadow-inner">
+                        <i class="fa-regular fa-calendar-check"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-1">Tarikh & Masa</h3>
+                    <p class="text-brand-purple font-semibold text-sm">24 Oktober 2026 (Sabtu)</p>
+                    <p class="text-gray-500 text-sm mt-1">7.30 Pagi</p>
+                </div>
+
+                <!-- Distance Card -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 card-hover flex flex-col items-center text-center">
+                    <div class="w-14 h-14 rounded-2xl bg-purple-50 text-brand-purple flex items-center justify-center text-2xl mb-4 shadow-inner">
+                        <i class="fa-solid fa-person-running"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-1">Jarak Larian</h3>
+                    <p class="text-brand-green font-semibold text-sm">3 KM Santai</p>
+                    <p class="text-gray-500 text-sm mt-1">Sesuai untuk seisi keluarga</p>
+                </div>
+
+                <!-- Location Card (Clickable to Google Maps) -->
+                <a href="https://maps.app.goo.gl/jYLoWT2EZcvYge4H8" target="_blank" rel="noopener noreferrer" class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 card-hover flex flex-col items-center text-center group cursor-pointer hover:border-brand-purple/40 transition">
+                    <div class="w-14 h-14 rounded-2xl bg-green-50 group-hover:bg-green-100 text-brand-green flex items-center justify-center text-2xl mb-4 transition shadow-inner">
+                        <i class="fa-solid fa-location-dot group-hover:scale-110 transition duration-300"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-1">Lokasi</h3>
+                    <p class="text-brand-purple font-bold text-base flex items-center justify-center gap-1.5 group-hover:underline">
+                        <span>C-Mart Changloon</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                    </p>
+                    <p class="text-gray-500 text-sm mt-1">Kedah Darul Aman</p>
+                    <span class="mt-4 text-xs font-semibold text-brand-green bg-green-50 px-3 py-1.5 rounded-full group-hover:bg-brand-green group-hover:text-white transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                        <span>Buka di Google Maps</span>
+                    </span>
                 </a>
+
+                <!-- Fee Summary Card -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 card-hover flex flex-col items-center text-center">
+                    <div class="w-14 h-14 rounded-2xl bg-purple-50 text-brand-purple flex items-center justify-center text-2xl mb-4 shadow-inner">
+                        <i class="fa-solid fa-tags"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-1">Kadar Yuran</h3>
+                    <p class="text-brand-purple font-semibold text-sm">RM35 - RM50</p>
+                    <p class="text-gray-500 text-sm mt-1">Mengikut pilihan kategori</p>
+                </div>
             </div>
 
-            <!-- Event Countdown -->
-            <div class="countdown-box p-6 sm:p-8 rounded-2xl max-w-2xl mx-auto border border-white/20 shadow-2xl">
-                <h3 class="text-emerald-300 font-extrabold tracking-wider text-xl sm:text-2xl mb-1 uppercase">EVENT COUNTDOWN</h3>
-                <p class="text-emerald-100 text-sm mb-6">24 Oktober 2026 • 7.30 Pagi</p>
-                <div class="grid grid-cols-4 gap-2 sm:gap-4 text-center">
-                    <div class="bg-slate-900/60 p-3 sm:p-4 rounded-xl border border-white/10">
-                        <span id="days" class="block text-2xl sm:text-4xl font-extrabold text-white">00</span>
-                        <span class="text-[10px] sm:text-xs uppercase text-slate-300 font-semibold tracking-wider">HARI</span>
+            <!-- What's Included / Entitlements -->
+            <div class="mt-12 bg-white rounded-3xl p-8 border border-gray-100 shadow-sm">
+                <h4 class="text-center font-bold text-gray-800 text-lg mb-6">Setiap Penyertaan Akan Menerima:</h4>
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 text-center">
+                    <div class="p-4 rounded-xl bg-gray-50 border border-gray-100 flex flex-col items-center">
+                        <div class="w-12 h-12 rounded-full bg-green-100 text-brand-green flex items-center justify-center text-xl mb-2">
+                            <i class="fa-solid fa-shirt"></i>
+                        </div>
+                        <span class="text-xs font-bold text-gray-700">T-Shirt Rasmi</span>
                     </div>
-                    <div class="bg-slate-900/60 p-3 sm:p-4 rounded-xl border border-white/10">
-                        <span id="hours" class="block text-2xl sm:text-4xl font-extrabold text-white">00</span>
-                        <span class="text-[10px] sm:text-xs uppercase text-slate-300 font-semibold tracking-wider">JAM</span>
+
+                    <div class="p-4 rounded-xl bg-gray-50 border border-gray-100 flex flex-col items-center">
+                        <div class="w-12 h-12 rounded-full bg-purple-100 text-brand-purple flex items-center justify-center text-xl mb-2">
+                            <i class="fa-solid fa-medal"></i>
+                        </div>
+                        <span class="text-xs font-bold text-gray-700">Pingat Penamat</span>
                     </div>
-                    <div class="bg-slate-900/60 p-3 sm:p-4 rounded-xl border border-white/10">
-                        <span id="minutes" class="block text-2xl sm:text-4xl font-extrabold text-white">00</span>
-                        <span class="text-[10px] sm:text-xs uppercase text-slate-300 font-semibold tracking-wider">MINIT</span>
+
+                    <div class="p-4 rounded-xl bg-gray-50 border border-gray-100 flex flex-col items-center">
+                        <div class="w-12 h-12 rounded-full bg-green-100 text-brand-green flex items-center justify-center text-xl mb-2">
+                            <i class="fa-solid fa-certificate"></i>
+                        </div>
+                        <span class="text-xs font-bold text-gray-700">Sijil Digital</span>
                     </div>
-                    <div class="bg-slate-900/60 p-3 sm:p-4 rounded-xl border border-white/10">
-                        <span id="seconds" class="block text-2xl sm:text-4xl font-extrabold text-white">00</span>
-                        <span class="text-[10px] sm:text-xs uppercase text-slate-300 font-semibold tracking-wider">SAAT</span>
+
+                    <div class="p-4 rounded-xl bg-gray-50 border border-gray-100 flex flex-col items-center">
+                        <div class="w-12 h-12 rounded-full bg-purple-100 text-brand-purple flex items-center justify-center text-xl mb-2">
+                            <i class="fa-solid fa-shield-heart"></i>
+                        </div>
+                        <span class="text-xs font-bold text-gray-700">Insurans</span>
                     </div>
-                </div>
-                <div class="mt-6 pt-4 border-t border-white/10 text-xs text-emerald-200 flex items-center justify-center gap-1">
-                    <i class="fa-solid fa-location-dot text-emerald-400"></i>
-                    <span>Lokasi: </span>
-                    <a href="https://maps.app.goo.gl/jYLoWT2EZcvYge4H8" target="_blank" rel="noopener noreferrer" class="font-bold underline hover:text-white transition">
-                        C-Mart Changloon, Kedah <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-                    </a>
+
+                    <div class="p-4 rounded-xl bg-gray-50 border border-gray-100 flex flex-col items-center">
+                        <div class="w-12 h-12 rounded-full bg-green-100 text-brand-green flex items-center justify-center text-xl mb-2">
+                            <i class="fa-solid fa-cookie"></i>
+                        </div>
+                        <span class="text-xs font-bold text-gray-700">Snack Ringan</span>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-gray-50 border border-gray-100 flex flex-col items-center">
+                        <div class="w-12 h-12 rounded-full bg-purple-100 text-brand-purple flex items-center justify-center text-xl mb-2">
+                            <i class="fa-solid fa-bottle-water"></i>
+                        </div>
+                        <span class="text-xs font-bold text-gray-700">Air Mineral</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Registration Section -->
-    <section id="daftar" class="py-16 px-4 max-w-6xl mx-auto">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-extrabold text-brand-purple mb-2">PENDAFTARAN ONLINE DIBUKA SEKARANG</h2>
-            <p class="text-slate-600">Sila pilih kategori pendaftaran anda mengikut T-shirt pilihan di bawah</p>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <!-- Pendaftaran Utama (Howei) -->
-            <div class="bg-white rounded-3xl p-8 shadow-xl border border-slate-100 hover:shadow-2xl transition flex flex-col justify-between relative overflow-hidden group">
-                <div class="absolute top-0 right-0 bg-brand-purple text-white px-4 py-1 rounded-bl-xl text-xs font-bold uppercase">
-                    Pendaftaran Utama
-                </div>
-                <div>
-                    <div class="w-14 h-14 bg-purple-100 text-brand-purple rounded-2xl flex items-center justify-center text-2xl font-bold mb-6">
-                        <i class="fa-solid fa-laptop"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-slate-800 mb-2">Portal Howei</h3>
-                    <p class="text-slate-600 text-sm mb-6 leading-relaxed">
-                        Untuk pendaftaran peserta Dewasa (T-Shirt Standard Lengan Pendek) & Kanak-Kanak.
-                    </p>
-                    
-                    <div class="space-y-3 mb-8 bg-slate-50 p-4 rounded-xl border border-slate-100">
-                        <div class="flex justify-between items-center text-sm">
-                            <span class="text-slate-600 font-medium">Dewasa (Standard)</span>
-                            <span class="font-bold text-brand-purple text-lg">RM40</span>
-                        </div>
-                        <div class="flex justify-between items-center text-sm pt-2 border-t border-slate-200">
-                            <span class="text-slate-600 font-medium">Kanak-Kanak (Standard)</span>
-                            <span class="font-bold text-brand-purple text-lg">RM35</span>
-                        </div>
-                    </div>
-                </div>
-
-                <a href="https://howei.com/event_details/larianmindasejahtera" target="_blank" rel="noopener noreferrer" class="w-full bg-brand-purple hover:bg-purple-900 text-white text-center font-bold py-4 rounded-2xl shadow-lg transition flex items-center justify-center gap-2 group-hover:scale-[1.02]">
-                    <span>Daftar Melalui Howei</span>
-                    <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
-                </a>
+    <section id="register" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="text-brand-green font-bold text-sm uppercase tracking-wider">Pendaftaran Online</span>
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl mt-1">Pilih Kaedah Pendaftaran Anda</h2>
+                <p class="mt-3 text-lg text-gray-600">Sila klik pautan yang berkaitan untuk mendaftar acara larian anda.</p>
             </div>
 
-            <!-- Pendaftaran T-Shirt Muslimah (Google Form) -->
-            <div class="bg-white rounded-3xl p-8 shadow-xl border-2 border-emerald-500/30 hover:border-emerald-500 transition flex flex-col justify-between relative overflow-hidden group">
-                <div class="absolute top-0 right-0 bg-brand-green text-white px-4 py-1 rounded-bl-xl text-xs font-bold uppercase">
-                    Khas Muslimah
-                </div>
-                <div>
-                    <div class="w-14 h-14 bg-emerald-100 text-brand-green rounded-2xl flex items-center justify-center text-2xl font-bold mb-6">
-                        <i class="fa-solid fa-shirt"></i>
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Portal Howei (Utama) -->
+                <div class="border-2 border-brand-green/30 hover:border-brand-green rounded-3xl p-8 relative flex flex-col justify-between bg-white shadow-xl transition-all">
+                    <div class="absolute -top-3 left-8 bg-brand-green text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                        Pilihan Utama (Standard)
                     </div>
-                    <h3 class="text-2xl font-bold text-slate-800 mb-2">Google Form</h3>
-                    <p class="text-slate-600 text-sm mb-6 leading-relaxed">
-                        Pendaftaran khas untuk peserta yang menginginkan <strong>T-Shirt Muslimah Lengan Panjang</strong>.
-                    </p>
-
-                    <div class="space-y-3 mb-8 bg-emerald-50/50 p-4 rounded-xl border border-emerald-100">
-                        <div class="flex justify-between items-center text-sm">
-                            <span class="text-slate-700 font-medium">Khas Muslimah (Lengan Panjang)</span>
-                            <span class="font-bold text-brand-green text-lg">RM50</span>
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-900">Pendaftaran Utama</h3>
+                                <p class="text-sm text-gray-500">Portal Rasmi Howei</p>
+                            </div>
+                            <div class="w-12 h-12 rounded-2xl bg-green-50 text-brand-green flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-globe"></i>
+                            </div>
                         </div>
-                        <p class="text-xs text-slate-500 italic mt-1">*Potongan khas labuh & selesa untuk muslimah</p>
+
+                        <div class="space-y-4 mb-8">
+                            <div class="flex justify-between items-center p-3.5 bg-gray-50 rounded-xl">
+                                <div>
+                                    <div class="font-bold text-gray-900">Dewasa</div>
+                                    <div class="text-xs text-gray-500">T-Shirt Standard Lengan Pendek</div>
+                                </div>
+                                <div class="text-xl font-extrabold text-brand-green">RM40</div>
+                            </div>
+
+                            <div class="flex justify-between items-center p-3.5 bg-gray-50 rounded-xl">
+                                <div>
+                                    <div class="font-bold text-gray-900">Kanak-Kanak</div>
+                                    <div class="text-xs text-gray-500">T-Shirt Standard Kids</div>
+                                </div>
+                                <div class="text-xl font-extrabold text-brand-green">RM35</div>
+                            </div>
+                        </div>
                     </div>
+
+                    <a href="https://howei.com/event_details/larianmindasejahtera" target="_blank" rel="noopener noreferrer" class="w-full bg-brand-green hover:bg-green-700 text-white font-bold py-4 rounded-xl text-center shadow-lg hover:shadow-xl transition flex items-center justify-center gap-2 group">
+                        <span>Daftar di Howei</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+                    </a>
                 </div>
 
-                <a href="https://forms.gle/zTzT3WhwD8GCQRNY6" target="_blank" rel="noopener noreferrer" class="w-full bg-brand-green hover:bg-emerald-600 text-white text-center font-bold py-4 rounded-2xl shadow-lg transition flex items-center justify-center gap-2 group-hover:scale-[1.02]">
-                    <span>Daftar T-Shirt Muslimah</span>
-                    <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
-                </a>
+                <!-- Google Form (Muslimah) -->
+                <div class="border-2 border-brand-purple/30 hover:border-brand-purple rounded-3xl p-8 relative flex flex-col justify-between bg-white shadow-xl transition-all">
+                    <div class="absolute -top-3 left-8 bg-brand-purple text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                        Khas Muslimah
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-900">Pendaftaran Muslimah</h3>
+                                <p class="text-sm text-gray-500">Google Form Rasmi</p>
+                            </div>
+                            <div class="w-12 h-12 rounded-2xl bg-purple-50 text-brand-purple flex items-center justify-center text-xl">
+                                <i class="fa-brands fa-google"></i>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4 mb-8">
+                            <div class="flex justify-between items-center p-3.5 bg-purple-50/50 rounded-xl border border-purple-100">
+                                <div>
+                                    <div class="font-bold text-gray-900">Khas Muslimah</div>
+                                    <div class="text-xs text-gray-500">T-Shirt Lengan Panjang & Potongan Labuh</div>
+                                </div>
+                                <div class="text-xl font-extrabold text-brand-purple">RM50</div>
+                            </div>
+                            <div class="text-xs text-gray-500 italic px-1">
+                                *Sila isi borang pendaftaran Google Form khas untuk peminat T-shirt muslimah potongan sopan dan labuh.
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="https://forms.gle/zTzT3WhwD8GCQRNY6" target="_blank" rel="noopener noreferrer" class="w-full bg-brand-purple hover:bg-brand-purple-dark text-white font-bold py-4 rounded-xl text-center shadow-lg hover:shadow-xl transition flex items-center justify-center gap-2 group">
+                        <span>Daftar T-Shirt Muslimah</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Details Section -->
-    <section class="py-16 bg-slate-100 px-4">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-extrabold text-brand-purple mb-2">BUTIRAN UTAMA ACARA</h2>
-                <p class="text-slate-600">Maklumat lengkap lokasi, masa, yuran dan saiz baju</p>
+    <!-- Posters Gallery Section -->
+    <section id="gallery" class="py-16 bg-gray-50 border-t border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Galeri Poster & Maklumat</h2>
+                <p class="mt-3 text-lg text-gray-600">Tekan gambar untuk melihat imej penuh dan resolusi asal.</p>
             </div>
 
-            <!-- Event Highlights Cards -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200/80 flex flex-col items-center text-center">
-                    <div class="w-12 h-12 bg-purple-100 text-brand-purple rounded-full flex items-center justify-center text-xl mb-4">
-                        <i class="fa-regular fa-calendar-check"></i>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Poster 1: Banner -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 card-hover cursor-pointer group" onclick="openModal('banner larian.jpg')">
+                    <div class="aspect-[4/3] bg-gray-100 overflow-hidden relative">
+                        <img src="banner larian.jpg" alt="Banner Larian Minda Sejahtera" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-semibold text-sm gap-2">
+                            <i class="fa-solid fa-magnifying-glass-plus text-lg"></i>
+                            <span>Buka Poster</span>
+                        </div>
                     </div>
-                    <h4 class="font-bold text-slate-800 text-lg mb-1">Tarikh & Masa</h4>
-                    <p class="text-slate-600 font-semibold">24 Oktober 2026 (Sabtu)</p>
-                    <p class="text-slate-500 text-sm">7.30 Pagi</p>
+                    <div class="p-4">
+                        <h4 class="font-bold text-gray-900 text-sm">Banner Utama Acara</h4>
+                        <p class="text-xs text-gray-500 mt-1">Maklumat larian 3KM di C-Mart Changloon</p>
+                    </div>
                 </div>
 
-                <a href="https://maps.app.goo.gl/jYLoWT2EZcvYge4H8" target="_blank" rel="noopener noreferrer" class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200/80 flex flex-col items-center text-center hover:border-emerald-500 hover:shadow-md transition group">
-                    <div class="w-12 h-12 bg-emerald-100 text-brand-green rounded-full flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-location-dot"></i>
+                <!-- Poster 2: T-Shirt Standard -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 card-hover cursor-pointer group" onclick="openModal('tshirt larian.jpg')">
+                    <div class="aspect-square bg-gray-100 overflow-hidden relative">
+                        <img src="tshirt larian.jpg" alt="T-Shirt Standard & Kids" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-semibold text-sm gap-2">
+                            <i class="fa-solid fa-magnifying-glass-plus text-lg"></i>
+                            <span>Buka Poster</span>
+                        </div>
                     </div>
-                    <h4 class="font-bold text-slate-800 text-lg mb-1">Lokasi</h4>
-                    <div class="inline-flex items-center gap-1 font-semibold text-brand-purple group-hover:text-brand-green transition">
-                        <span>C-Mart Changloon</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                    <div class="p-4">
+                        <h4 class="font-bold text-gray-900 text-sm">T-Shirt Standard & Kids</h4>
+                        <p class="text-xs text-gray-500 mt-1">Reka bentuk hijau/ungu & saiz baju</p>
                     </div>
-                    <p class="text-slate-500 text-sm">Kedah Darul Aman</p>
-                    <span class="mt-3 text-xs font-semibold text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200/60">
-                        Klik untuk Google Maps <i class="fa-solid fa-chevron-right text-[10px] ml-0.5"></i>
-                    </span>
-                </a>
-
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200/80 flex flex-col items-center text-center">
-                    <div class="w-12 h-12 bg-emerald-100 text-brand-green rounded-full flex items-center justify-center text-xl mb-4">
-                        <i class="fa-solid fa-person-walking"></i>
-                    </div>
-                    <h4 class="font-bold text-slate-800 text-lg mb-1">Kategori Larian</h4>
-                    <p class="text-slate-600 font-semibold">3 KM Larian Santai</p>
-                    <p class="text-slate-500 text-sm">Mesra Keluarga & Kanak-Kanak</p>
                 </div>
-            </div>
 
-            <!-- What's Included -->
-            <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200/80 mb-12">
-                <h3 class="text-xl font-bold text-slate-800 mb-6 text-center flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-gift text-brand-green"></i>
-                    <span>Yuran Penyertaan Termasuk:</span>
-                </h3>
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 text-center">
-                    <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
-                        <div class="text-2xl text-brand-purple mb-2"><i class="fa-solid fa-shirt"></i></div>
-                        <div class="text-xs font-bold text-slate-700">T-Shirt Rasmi</div>
+                <!-- Poster 3: T-Shirt Muslimah -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 card-hover cursor-pointer group" onclick="openModal('muslimah.jpeg')">
+                    <div class="aspect-square bg-gray-100 overflow-hidden relative">
+                        <img src="muslimah.jpeg" alt="T-Shirt Khas Muslimah" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-semibold text-sm gap-2">
+                            <i class="fa-solid fa-magnifying-glass-plus text-lg"></i>
+                            <span>Buka Poster</span>
+                        </div>
                     </div>
-                    <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
-                        <div class="text-2xl text-brand-purple mb-2"><i class="fa-solid fa-award"></i></div>
-                        <div class="text-xs font-bold text-slate-700">Pingat Penamat</div>
+                    <div class="p-4">
+                        <h4 class="font-bold text-gray-900 text-sm">T-Shirt Khas Muslimah</h4>
+                        <p class="text-xs text-gray-500 mt-1">Lengan panjang & potongan labuh khas</p>
                     </div>
-                    <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
-                        <div class="text-2xl text-brand-purple mb-2"><i class="fa-solid fa-certificate"></i></div>
-                        <div class="text-xs font-bold text-slate-700">Sijil Digital</div>
+                </div>
+
+                <!-- Poster 4: Medal -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 card-hover cursor-pointer group" onclick="openModal('medal larian.jpg')">
+                    <div class="aspect-square bg-gray-100 overflow-hidden relative">
+                        <img src="medal larian.jpg" alt="Pingat Penamat" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-semibold text-sm gap-2">
+                            <i class="fa-solid fa-magnifying-glass-plus text-lg"></i>
+                            <span>Buka Poster</span>
+                        </div>
                     </div>
-                    <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
-                        <div class="text-2xl text-brand-purple mb-2"><i class="fa-solid fa-shield-halved"></i></div>
-                        <div class="text-xs font-bold text-slate-700">Insurans</div>
-                    </div>
-                    <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
-                        <div class="text-2xl text-brand-purple mb-2"><i class="fa-solid fa-cookie-bite"></i></div>
-                        <div class="text-xs font-bold text-slate-700">Snack Ringan</div>
-                    </div>
-                    <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
-                        <div class="text-2xl text-brand-purple mb-2"><i class="fa-solid fa-bottle-water"></i></div>
-                        <div class="text-xs font-bold text-slate-700">Air Mineral</div>
+                    <div class="p-4">
+                        <h4 class="font-bold text-gray-900 text-sm">Pingat Penamat (Finisher)</h4>
+                        <p class="text-xs text-gray-500 mt-1">Pingat eksklusif untuk semua penamat</p>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Size Chart Tables -->
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Adult & Muslimah Size Chart -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200/80">
-                    <h3 class="text-lg font-bold text-brand-purple mb-4 flex items-center gap-2">
-                        <i class="fa-solid fa-ruler-combined text-brand-green"></i> Carta Saiz T-Shirt Dewasa & Muslimah
-                    </h3>
+    <!-- Sizing Chart Section -->
+    <section id="sizing" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Carta Ukuran Saiz T-Shirt</h2>
+                <p class="mt-3 text-lg text-gray-600">Pastikan anda memilih saiz yang tepat sebelum membuat pendaftaran. (Ukuran dalam Inci)</p>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-8 items-start">
+                <!-- Adult & Muslimah Table -->
+                <div class="lg:col-span-8 bg-gray-50 rounded-2xl p-6 border border-gray-200 overflow-hidden">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-bold text-gray-900 flex items-center gap-2">
+                            <i class="fa-solid fa-shirt text-brand-green"></i>
+                            <span>Dewasa & Muslimah</span>
+                        </h3>
+                        <span class="text-xs bg-brand-purple/10 text-brand-purple font-semibold px-2.5 py-1 rounded-full">Inci (Inches)</span>
+                    </div>
+
                     <div class="overflow-x-auto">
-                        <table class="w-full text-sm text-left text-slate-600">
-                            <thead class="text-xs uppercase bg-slate-100 text-slate-700">
+                        <table class="w-full text-left text-sm text-gray-600">
+                            <thead class="bg-gray-200/70 text-gray-800 uppercase text-xs">
                                 <tr>
                                     <th class="px-4 py-3 rounded-l-lg">Saiz</th>
                                     <th class="px-4 py-3">Dada (Width)</th>
                                     <th class="px-4 py-3">Labuh Standard</th>
-                                    <th class="px-4 py-3 rounded-r-lg">Labuh Muslimah</th>
+                                    <th class="px-4 py-3 rounded-r-lg bg-brand-purple/10 text-brand-purple">Labuh Muslimah</th>
                                 </tr>
                             </thead>
-                            <tbody class="divide-y divide-slate-100 font-medium">
-                                <tr><td class="px-4 py-2 font-bold">XS</td><td class="px-4 py-2">18"</td><td class="px-4 py-2">26"</td><td class="px-4 py-2 text-brand-green font-bold">33"</td></tr>
-                                <tr><td class="px-4 py-2 font-bold">S</td><td class="px-4 py-2">19"</td><td class="px-4 py-2">27"</td><td class="px-4 py-2 text-brand-green font-bold">34"</td></tr>
-                                <tr><td class="px-4 py-2 font-bold">M</td><td class="px-4 py-2">20"</td><td class="px-4 py-2">28"</td><td class="px-4 py-2 text-brand-green font-bold">35"</td></tr>
-                                <tr><td class="px-4 py-2 font-bold">L</td><td class="px-4 py-2">21"</td><td class="px-4 py-2">29"</td><td class="px-4 py-2 text-brand-green font-bold">36"</td></tr>
-                                <tr><td class="px-4 py-2 font-bold">XL</td><td class="px-4 py-2">22"</td><td class="px-4 py-2">30"</td><td class="px-4 py-2 text-brand-green font-bold">37"</td></tr>
-                                <tr><td class="px-4 py-2 font-bold">2XL</td><td class="px-4 py-2">23"</td><td class="px-4 py-2">31"</td><td class="px-4 py-2 text-brand-green font-bold">38"</td></tr>
-                                <tr><td class="px-4 py-2 font-bold">3XL</td><td class="px-4 py-2">24"</td><td class="px-4 py-2">32"</td><td class="px-4 py-2 text-brand-green font-bold">39"</td></tr>
-                                <tr><td class="px-4 py-2 font-bold">4XL</td><td class="px-4 py-2">25"</td><td class="px-4 py-2">33"</td><td class="px-4 py-2 text-brand-green font-bold">40"</td></tr>
-                                <tr><td class="px-4 py-2 font-bold">5XL</td><td class="px-4 py-2">26"</td><td class="px-4 py-2">33"</td><td class="px-4 py-2 text-brand-green font-bold">41"</td></tr>
+                            <tbody class="divide-y divide-gray-200 font-medium">
+                                <tr><td class="px-4 py-2 font-bold">XS</td><td class="px-4 py-2">18"</td><td class="px-4 py-2">26"</td><td class="px-4 py-2 text-brand-purple font-bold">33"</td></tr>
+                                <tr><td class="px-4 py-2 font-bold">S</td><td class="px-4 py-2">19"</td><td class="px-4 py-2">27"</td><td class="px-4 py-2 text-brand-purple font-bold">34"</td></tr>
+                                <tr><td class="px-4 py-2 font-bold">M</td><td class="px-4 py-2">20"</td><td class="px-4 py-2">28"</td><td class="px-4 py-2 text-brand-purple font-bold">35"</td></tr>
+                                <tr><td class="px-4 py-2 font-bold">L</td><td class="px-4 py-2">21"</td><td class="px-4 py-2">29"</td><td class="px-4 py-2 text-brand-purple font-bold">36"</td></tr>
+                                <tr><td class="px-4 py-2 font-bold">XL</td><td class="px-4 py-2">22"</td><td class="px-4 py-2">30"</td><td class="px-4 py-2 text-brand-purple font-bold">37"</td></tr>
+                                <tr><td class="px-4 py-2 font-bold">2XL</td><td class="px-4 py-2">23"</td><td class="px-4 py-2">31"</td><td class="px-4 py-2 text-brand-purple font-bold">38"</td></tr>
+                                <tr><td class="px-4 py-2 font-bold">3XL</td><td class="px-4 py-2">24"</td><td class="px-4 py-2">32"</td><td class="px-4 py-2 text-brand-purple font-bold">39"</td></tr>
+                                <tr><td class="px-4 py-2 font-bold">4XL</td><td class="px-4 py-2">25"</td><td class="px-4 py-2">33"</td><td class="px-4 py-2 text-brand-purple font-bold">40"</td></tr>
+                                <tr><td class="px-4 py-2 font-bold">5XL</td><td class="px-4 py-2">26"</td><td class="px-4 py-2">33"</td><td class="px-4 py-2 text-brand-purple font-bold">41"</td></tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
 
-                <!-- Kids Size Chart -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200/80 h-fit">
-                    <h3 class="text-lg font-bold text-brand-purple mb-4 flex items-center gap-2">
-                        <i class="fa-solid fa-child text-brand-green"></i> Carta Saiz T-Shirt Kanak-Kanak
-                    </h3>
+                <!-- Kids Table -->
+                <div class="lg:col-span-4 bg-gray-50 rounded-2xl p-6 border border-gray-200 overflow-hidden">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-bold text-gray-900 flex items-center gap-2">
+                            <i class="fa-solid fa-child text-brand-purple"></i>
+                            <span>Kanak-Kanak (Kids)</span>
+                        </h3>
+                        <span class="text-xs bg-brand-green/10 text-brand-green font-semibold px-2.5 py-1 rounded-full">Inci (Inches)</span>
+                    </div>
+
                     <div class="overflow-x-auto">
-                        <table class="w-full text-sm text-left text-slate-600">
-                            <thead class="text-xs uppercase bg-slate-100 text-slate-700">
+                        <table class="w-full text-left text-sm text-gray-600">
+                            <thead class="bg-gray-200/70 text-gray-800 uppercase text-xs">
                                 <tr>
                                     <th class="px-4 py-3 rounded-l-lg">Saiz</th>
                                     <th class="px-4 py-3">Dada (Width)</th>
                                     <th class="px-4 py-3 rounded-r-lg">Labuh (Length)</th>
                                 </tr>
                             </thead>
-                            <tbody class="divide-y divide-slate-100 font-medium">
+                            <tbody class="divide-y divide-gray-200 font-medium">
                                 <tr><td class="px-4 py-3 font-bold">SK / 28</td><td class="px-4 py-3">28"</td><td class="px-4 py-3">19"</td></tr>
                                 <tr><td class="px-4 py-3 font-bold">MK / 30</td><td class="px-4 py-3">30"</td><td class="px-4 py-3">20"</td></tr>
                                 <tr><td class="px-4 py-3 font-bold">LK / 32</td><td class="px-4 py-3">32"</td><td class="px-4 py-3">21"</td></tr>
                             </tbody>
                         </table>
                     </div>
-                    <p class="text-xs text-slate-400 mt-4 italic">* Semua ukuran adalah dalam inci (Inches)</p>
+                    <p class="text-xs text-gray-500 mt-6 leading-relaxed italic">
+                        * Ukuran di atas adalah ukuran saiz baju. Sila pilih saiz yang bersesuaian untuk keselesaan larian anda.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Poster Gallery -->
-    <section class="py-16 px-4 max-w-6xl mx-auto">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-extrabold text-brand-purple mb-2">GALERI POSTER ACARA</h2>
-            <p class="text-slate-600">Tekan gambar untuk melihat paparan penuh</p>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <!-- Poster 1: Banner -->
-            <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 hover:shadow-xl transition group cursor-pointer" onclick="openModal('banner larian.jpg')">
-                <div class="overflow-hidden aspect-[4/3] bg-slate-100 relative">
-                    <img src="banner larian.jpg" alt="Banner Larian Minda Sejahtera 2026" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                    <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-semibold text-sm gap-2">
-                        <i class="fa-solid fa-magnifying-glass-plus"></i> Lihat Poster
-                    </div>
-                </div>
-                <div class="p-4">
-                    <h4 class="font-bold text-slate-800 text-sm">Banner Utama Acara</h4>
-                    <p class="text-slate-500 text-xs">Maklumat keseluruhan larian</p>
-                </div>
-            </div>
-
-            <!-- Poster 2: T-Shirt Standard -->
-            <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 hover:shadow-xl transition group cursor-pointer" onclick="openModal('tshirt larian.jpg')">
-                <div class="overflow-hidden aspect-square bg-slate-100 relative">
-                    <img src="tshirt larian.jpg" alt="T-Shirt Standard & Kanak-Kanak" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                    <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-semibold text-sm gap-2">
-                        <i class="fa-solid fa-magnifying-glass-plus"></i> Lihat Poster
-                    </div>
-                </div>
-                <div class="p-4">
-                    <h4 class="font-bold text-slate-800 text-sm">T-Shirt Standard & Kids</h4>
-                    <p class="text-slate-500 text-xs">Reka bentuk & carta saiz</p>
-                </div>
-            </div>
-
-            <!-- Poster 3: T-Shirt Muslimah -->
-            <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 hover:shadow-xl transition group cursor-pointer" onclick="openModal('WhatsApp Image 2026-09-23 at 9.05.01 PM.jpeg')">
-                <div class="overflow-hidden aspect-square bg-slate-100 relative">
-                    <img src="WhatsApp Image 2026-09-23 at 9.05.01 PM.jpeg" alt="T-Shirt Muslimah" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                    <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-semibold text-sm gap-2">
-                        <i class="fa-solid fa-magnifying-glass-plus"></i> Lihat Poster
-                    </div>
-                </div>
-                <div class="p-4">
-                    <h4 class="font-bold text-slate-800 text-sm">T-Shirt Khas Muslimah</h4>
-                    <p class="text-slate-500 text-xs">Lengan panjang & potongan labuh</p>
-                </div>
-            </div>
-
-            <!-- Poster 4: Medal -->
-            <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 hover:shadow-xl transition group cursor-pointer" onclick="openModal('medal larian.jpg')">
-                <div class="overflow-hidden aspect-square bg-slate-100 relative">
-                    <img src="medal larian.jpg" alt="Pingat Penamat" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                    <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-semibold text-sm gap-2">
-                        <i class="fa-solid fa-magnifying-glass-plus"></i> Lihat Poster
-                    </div>
-                </div>
-                <div class="p-4">
-                    <h4 class="font-bold text-slate-800 text-sm">Pingat Penamat (Finisher)</h4>
-                    <p class="text-slate-500 text-xs">Reka bentuk pingat rasmi</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Modal for Full Image View -->
-    <div id="imageModal" class="fixed inset-0 z-50 bg-black/90 hidden backdrop-blur-md flex items-center justify-center p-4" onclick="closeModal()">
-        <div class="relative max-w-4xl w-full max-h-[90vh] flex justify-center items-center">
-            <button onclick="closeModal()" class="absolute -top-12 right-0 text-white text-3xl font-bold hover:text-emerald-400 transition">&times; Tutup</button>
-            <img id="modalImg" src="" alt="Poster Full" class="max-h-[85vh] max-w-full rounded-xl object-contain shadow-2xl">
+    <!-- Lightbox Modal for Poster View -->
+    <div id="imageModal" class="fixed inset-0 z-50 bg-black/90 hidden backdrop-blur-md flex items-center justify-center p-4 transition-all" onclick="closeModal()">
+        <div class="relative max-w-4xl w-full max-h-[90vh] flex flex-col justify-center items-center">
+            <button onclick="closeModal()" class="self-end mb-2 text-white/80 hover:text-white text-sm font-semibold flex items-center gap-1.5 bg-white/10 px-4 py-1.5 rounded-full border border-white/20 transition">
+                <span>Tutup</span>
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <img id="modalImg" src="" alt="Poster Paparan Penuh" class="max-h-[82vh] max-w-full rounded-2xl object-contain shadow-2xl border border-white/20">
         </div>
     </div>
 
     <!-- Footer -->
-    <footer class="bg-slate-900 text-white py-12 px-4 border-t border-slate-800">
-        <div class="max-w-6xl mx-auto text-center">
-            <div class="flex justify-center items-center space-x-2 text-xl font-bold mb-4 text-emerald-400">
-                <i class="fa-solid fa-ribbon"></i>
-                <span>#LangkahUntukMinda #HentikanStigma #KesihatanMentalMilikSemua</span>
+    <footer class="bg-gray-900 text-white py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+            <div class="flex items-center justify-center space-x-2">
+                <span class="text-2xl font-extrabold tracking-tight">LARIAN MINDA <span class="text-brand-green">SEJAHTERA 2026</span></span>
             </div>
-            <p class="text-slate-400 text-sm max-w-2xl mx-auto mb-6">
-                Larian Minda Sejahtera 2026 sempena Sambutan Hari Kesihatan Mental Sedunia Tahun 2026 Peringkat Negeri Kedah.
+            
+            <p class="text-gray-400 text-sm max-w-xl mx-auto">
+                Program Sambutan Hari Kesihatan Mental Sedunia Tahun 2026 Peringkat Negeri Kedah Darul Aman. Bersama kita jayakan kesedaran minda sihat!
             </p>
-            <div class="text-xs text-slate-500 border-t border-slate-800 pt-6">
-                &copy; 2026 Jabatan Kesihatan Negeri Kedah & PKD Kubang Pasu. Hak Cipta Terelihara.
+
+            <div class="pt-6 border-t border-gray-800 text-xs text-gray-500">
+                &copy; 2026 Larian Minda Sejahtera. Jabatan Kesihatan Negeri Kedah & PKD Kubang Pasu. Hak Cipta Terpelihara.
             </div>
         </div>
     </footer>
 
-    <!-- Countdown Timer Script -->
     <script>
-        // Target Date: 24 October 2026, 07:30:00 AM
+        // Target Date: 24 October 2026 at 7:30 AM
         const eventDate = new Date("October 24, 2026 07:30:00").getTime();
 
         function updateCountdown() {
@@ -458,14 +606,16 @@
         setInterval(updateCountdown, 1000);
         updateCountdown();
 
-        // Image Modal Script
+        // Image Modal functionality
         function openModal(imgSrc) {
             document.getElementById('modalImg').src = imgSrc;
             document.getElementById('imageModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
         }
 
         function closeModal() {
             document.getElementById('imageModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
         }
     </script>
 </body>
